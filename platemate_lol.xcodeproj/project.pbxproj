@@ -26,21 +26,6 @@
 			path = platemate_lolUITests;
 			sourceTree = "<group>";
 		};
-		1C8390672DAE0A3300973F0F /* Platemate */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Platemate;
-			sourceTree = "<group>";
-		};
-		1C83907A2DAE0A3600973F0F /* PlatemateTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PlatemateTests;
-			sourceTree = "<group>";
-		};
-		1C8390842DAE0A3600973F0F /* PlatemateUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PlatemateUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +45,6 @@
 				1C8390092DADCB2F00973F0F /* platemate_lol */,
 				1C83901C2DADCB3100973F0F /* platemate_lolTests */,
 				1C8390262DADCB3100973F0F /* platemate_lolUITests */,
-				1C8390672DAE0A3300973F0F /* Platemate */,
-				1C83907A2DAE0A3600973F0F /* PlatemateTests */,
-				1C8390842DAE0A3600973F0F /* PlatemateUITests */,
 				1C8390082DADCB2F00973F0F /* Products */,
 			);
 			sourceTree = "<group>";
