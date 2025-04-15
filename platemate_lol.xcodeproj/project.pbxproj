@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		1C8390072DADCB2F00973F0F /* Platemate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Platemate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C8390072DADCB2F00973F0F /* PlateMate..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlateMate..app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,7 +52,7 @@
 		1C8390082DADCB2F00973F0F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1C8390072DADCB2F00973F0F /* Platemate.app */,
+				1C8390072DADCB2F00973F0F /* PlateMate..app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,9 +60,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1C8390062DADCB2F00973F0F /* Platemate */ = {
+		1C8390062DADCB2F00973F0F /* PlateMate. */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1C83902D2DADCB3100973F0F /* Build configuration list for PBXNativeTarget "Platemate" */;
+			buildConfigurationList = 1C83902D2DADCB3100973F0F /* Build configuration list for PBXNativeTarget "PlateMate." */;
 			buildPhases = (
 				1C8390032DADCB2F00973F0F /* Sources */,
 				1C8390042DADCB2F00973F0F /* Frameworks */,
@@ -75,11 +75,11 @@
 			fileSystemSynchronizedGroups = (
 				1C8390092DADCB2F00973F0F /* platemate_lol */,
 			);
-			name = Platemate;
+			name = PlateMate.;
 			packageProductDependencies = (
 			);
 			productName = platemate_lol;
-			productReference = 1C8390072DADCB2F00973F0F /* Platemate.app */;
+			productReference = 1C8390072DADCB2F00973F0F /* PlateMate..app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +111,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1C8390062DADCB2F00973F0F /* Platemate */,
+				1C8390062DADCB2F00973F0F /* PlateMate. */,
 			);
 		};
 /* End PBXProject section */
@@ -344,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1C83902D2DADCB3100973F0F /* Build configuration list for PBXNativeTarget "Platemate" */ = {
+		1C83902D2DADCB3100973F0F /* Build configuration list for PBXNativeTarget "PlateMate." */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1C83902E2DADCB3100973F0F /* Debug */,
