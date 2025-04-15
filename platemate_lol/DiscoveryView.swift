@@ -188,6 +188,8 @@ struct RatingFilterMenu: View {
             Button("All") { viewState.filterRating = 0.0 }
             Button("4+ Stars") { viewState.filterRating = 4.0 }
             Button("3+ Stars") { viewState.filterRating = 3.0 }
+            Button("2+ Stars") { viewState.filterRating = 2.0 }
+
         }
     }
 }
