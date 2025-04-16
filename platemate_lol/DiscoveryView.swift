@@ -11,12 +11,12 @@ import Combine
 // MARK: - Main View
 struct DiscoveryView: View {
     @EnvironmentObject var dishViewModel: DishViewModel
-    @StateObject private var viewState: DiscoveryViewState
+    @StateObject var viewState = DiscoveryViewState()
     @State private var selectedDish: Dish?
     
-    init(dishViewModel: DishViewModel) {
-        _viewState = StateObject(wrappedValue: DiscoveryViewState(dishViewModel: dishViewModel))
-    }
+//    init(dishViewModel: DishViewModel) {
+//        _viewState = StateObject(wrappedValue: DiscoveryViewState(dishViewModel: dishViewModel))
+//    }
     
     var body: some View {
         NavigationView {
@@ -50,7 +50,11 @@ struct DiscoveryView: View {
                 PlateCardGenerator(dish: dish, viewModel: dishViewModel)
             }
         }
-        .onAppear(perform: dishViewModel.fetchDishes)
+        .onAppear {
+            dishViewModel.fetchDishes()
+            viewState.dishViewModel = dishViewModel
+            viewState.updateFilters()
+        }
     }
 }
 
@@ -250,25 +254,19 @@ class DiscoveryViewState: ObservableObject {
     @Published var searchText = ""
     @Published var sortOption: SortOption = .newest
     @Published var filterRating: Double = 0.0
-    
+    weak var dishViewModel: DishViewModel?
+
     @Published var throwbacks: [Dish] = []
     @Published var filteredDishes: [Dish] = []
     
     // Reference to the DishViewModel
-    private weak var dishViewModel: DishViewModel?
     
     private var cancellables = Set<AnyCancellable>()
     
     // Initialize with reference to DishViewModel
-    init(dishViewModel: DishViewModel) {
-        self.dishViewModel = dishViewModel
-        
-        // Initialize throwbacks immediately
-        throwbacks = dishViewModel.getThrowbackDishes()
-        // Initialize filtered dishes with all dishes
-        filteredDishes = dishViewModel.dishes
-        
-        setupBindings()
+    init() {
+        throwbacks = []
+        filteredDishes = []
     }
     
     private func setupBindings() {
@@ -281,7 +279,16 @@ class DiscoveryViewState: ObservableObject {
             .store(in: &cancellables)
     }
     
-    private func updateFilters() {
+    // Set DishViewModel when view appears
+    func setDishViewModel(_ viewModel: DishViewModel) {
+        self.dishViewModel = viewModel
+        self.throwbacks = viewModel.getThrowbackDishes()
+        self.filteredDishes = viewModel.dishes
+        setupBindings()
+    }
+    
+    
+    func updateFilters() {
         guard let dishViewModel = getDishViewModel() else { return }
         
         // First, filter by rating if needed
